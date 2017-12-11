@@ -1,0 +1,22 @@
+<h4><p>There are totally {{length}} results</p></h4>
+
+<table class="table table-striped">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Business_id</th>
+			<th scope="col">User_id</th>
+			<th scope="col">Stars</th>
+			<th scope="col">Reviews</th>
+			<th scope="col">Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat='review in reviews'>
+			<td>{{review.business_id}}</td>
+			<td>{{review.user_id}}</td>
+			<td>{{review.stars}}</td>
+			<td>{{review.text}}</td>
+			<td>{{review.date}}</td>
+		</tr>
+	</tbody>
+</table>
