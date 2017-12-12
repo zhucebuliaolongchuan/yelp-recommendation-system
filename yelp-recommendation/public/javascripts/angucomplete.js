@@ -157,7 +157,7 @@ angular.module('angucomplete', [] )
             }
 
             $scope.keyPressed = function(event) {
-                if (!(event.which == 38 || event.which == 40 || event.which == 13)) {
+                if (!(event.which == 38 || event.which == 40 || event.which == 13 || event.which == 8)) {
                     if (!$scope.searchStr || $scope.searchStr == "") {
                         $scope.showDropdown = false;
                         $scope.lastSearchTerm = null
@@ -198,7 +198,7 @@ angular.module('angucomplete', [] )
             inputField.on('keyup', $scope.keyPressed);
 
             elem.on("keyup", function (event) {
-                if(event.which === 40) {
+                if(event.which == 40) {
                     if ($scope.results && ($scope.currentIndex + 1) < $scope.results.length) {
                         $scope.currentIndex ++;
                         $scope.$apply();
@@ -224,7 +224,7 @@ angular.module('angucomplete', [] )
                     } else {
                         $scope.results = [];
                         $scope.$apply();
-                        event.preventDefault;
+                        event.preventDefault();
                         event.stopPropagation();
                     }
 
@@ -232,10 +232,11 @@ angular.module('angucomplete', [] )
                     $scope.results = [];
                     $scope.showDropdown = false;
                     $scope.$apply();
-                } else if (event.which == 8) {
-                    $scope.selectedObject = null;
-                    $scope.$apply();
-                }
+                } 
+                // else if (event.which == 8) {
+                //     $scope.selectedObject = null;
+                //     $scope.$apply();
+                // }
             });
 
         }

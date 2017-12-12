@@ -3,42 +3,26 @@
 	<div class="col-lg-4" align="Center">
 		<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" class="position-relative" alt="Yelp Search">
 		<br><br><br>
+
 		<form>
 			<div class="form-group" align="left">
 				<div>
-					<input class="form-control form-control-lg" placeholder="Enter User ID" ng_model = "name">
-					<!-- <p class="form-text text-muted">Please input user id so that we can recommend the business you would like</p> -->
+					<input class="form-control" placeholder="Enter UserID" ng_model="name">
+					<small><p class="form-text text-muted">Enter UserID so that we can recommend the business you would like</p></small>
 				</div>
 			</div>
 			<div class="form-group">
-				<div>
-					<input class="form-control form-control-lg" placeholder="Enter City" ng-model = "city">
-				</div>
+				<angucomplete placeholder="Search City" pause="400" selectedobject="selectedCities" localdata="selectedCities" searchfields="city" titlefield="city" minlength="1" inputclass="form-control" matchclass="highlight"/>
 			</div>
 			<div class="form-group">
-				<div>
-<!-- 					<input class="form-control form-control-lg" placeholder="Enter Category" ng_model = "categories"> -->
-					<select class="form-control" ng_model = "categories">
-						<option value = 'Restaurants' >Restaurants</option>
-						<option value = 'Shopping'>Shopping</option>
-						<option value = 'Food'>Food</option>
-						<option value = 'Beauty & Spas'>Beauty & Spas</option>
-						<option value = 'Home Services'>Home Services</option>
-						<option value = 'Health & Medical'>Health & Medical</option>
-						<option value = 'Nightlife'>Nightlife</option>
-						<option value = 'Bars'>Bars</option>
-						<option value = 'Automotive'>Automotive</option>
-						<option value = 'Local Services'>Local Services</option>
-					</select>
-					<!-- <angucomplete id="ex1" placeholder="Search categories" pause="100" selectedobject="selectedCountry" localdata="categories" searchfields="categories" titlefield="categories" minlength="1" inputclass="form-control form-control-lg" matchclass="highlight" /> -->
-				</div>
+				<angucomplete placeholder="Search Category" pause="400" selectedobject="selectedCategories" localdata="selectedCategories" searchfields="name" titlefield="name" minlength="1" inputclass="form-control" matchclass="highlight"/>
 			</div>
 			<div class="form-group">
 				<div>
 					<!-- <input class="form-control form-control-lg" placeholder="Stars Above (Not Below 3.0)" ng_model = "stars"> -->
 					<!-- <label class="mr-sm-2" for="inlineFormCustomSelectPref">Preference</label> -->
-					<select class="form-control" ng_model = "stars">
-						<option value = '1' >Beyond 1 star</option>
+					<select class="form-control" ng-model="stars">
+						<option value = '1'>Beyond 1 star</option>
 						<option value = '2'>Beyond 2 stars</option>
 						<option value = '3'>Beyond 3 stars</option>
 						<option value = '4'>Beyond 4 stars</option>
@@ -46,7 +30,8 @@
 					</select>
 				</div>
 			</div>
-			<button class="btn btn-danger btn-lg btn-block" ng-click = "search(city, categories, stars)">Recommend</button>
+
+			<button class="btn btn-danger btn-lg btn-block" ng-click = "search(selectedCities.originalObject.city, selectedCategories.originalObject.name, stars)">Recommend</button>
 		</form>
 		<br>
 	</div>
