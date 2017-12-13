@@ -9,6 +9,7 @@
 			<th scope="col">Address</th>
 			<th scope="col">Reviews</th>
 			<th scope="col">Stars1</th>
+			<th scope="col">Stars2</th>
 			<th scope="col">Tags</th>
 		</tr>
 	</thead>
@@ -21,6 +22,7 @@
 			<td>{{business.address}}</td>
 			<td>{{business.review_count}}</td>
 			<td>{{business.stars}}</td>
+			<td>{{business.new_stars}}</td>
 			<td><div ng-repeat = 'c in business.categories'><p>{{c}}</p></div></td>
 			<!-- <td>{{business.stars}}</td> -->
 		</tr>
