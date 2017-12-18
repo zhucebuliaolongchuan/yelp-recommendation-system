@@ -10,7 +10,7 @@ var db = monk('localhost:27017/yelp');
 
 router.get('/', function(req, res) {
 	var collection = db.get('new_business');
-	collection.find({review_count : {$gt : 100}}, function(err, business){
+	collection.find({review_count : {$gt : 50}}, function(err, business){
 		if (err) throw err;
 
 		res.json(business);
@@ -19,7 +19,7 @@ router.get('/', function(req, res) {
 
 router.get('/:city', function(req, res) {
 	var collection = db.get('new_business');
-	collection.find({city : req.params.city, review_count : {$gt : 100}}, function(err, business){
+	collection.find({city : req.params.city, review_count : {$gt : 50}}, function(err, business){
 		if (err) throw err;
 		res.json(business);
 	})
@@ -27,7 +27,7 @@ router.get('/:city', function(req, res) {
 
 router.get('/city=:city/categories=:categories/stars=:stars', function(req, res) {
 	var collection = db.get('new_business');
-	collection.find({city : req.params.city, review_count : {$gt : 100}}, {limit : 10000}, function(err, business){
+	collection.find({city : req.params.city, review_count : {$gt : 50}}, {limit : 10000}, function(err, business){
 		if (err) throw err;
 		res.json(business);
 	})

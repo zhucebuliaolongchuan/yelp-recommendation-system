@@ -48,7 +48,7 @@ app.controller('BusinessSearchCtrl', ['$scope', '$resource', '$location', '$rout
                 console.log($routeParams.categories);
                 return business.stars >= $routeParams.stars & business.categories.includes($routeParams.categories);
             }).sort(function(a, b){
-                var x = a.review_count > b.review_count? -1 : 1;
+                var x = a.new_stars > b.new_stars? -1 : 1;
                 return x
             });
 
