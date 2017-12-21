@@ -51,7 +51,6 @@ app.controller('BusinessSearchCtrl', ['$scope', '$resource', '$location', '$rout
             if (recommends.length != 0)
                 for (var id in recommends) {
                     Businesses.query({business_id : recommends[id]}, function(bs){
-                        console.log(city, categories, stars);
                         var new_bs = bs.filter(function(business){
                             return business.stars > stars & business.city == city & business.categories.includes(categories);
                         });
@@ -62,6 +61,37 @@ app.controller('BusinessSearchCtrl', ['$scope', '$resource', '$location', '$rout
         });
         $scope.bs = res;
         $scope.length = res.length;
+
+        // Query through the array
+        // var Recommendations = $resource('api/businesses/user_id=:user_id');
+        // var Business = $resource('api/business/busienss_id=:business_id');
+        // var city = $routeParams.city;
+        // var categories = $routeParams.categories;
+        // var stars = $routeParams.stars;
+        // var res = new Array();
+
+        // Recommendations.query({ user_id: $routeParams.user_id}, function(rs){
+
+        //     var recommends = rs[0].recommendations;
+        //     if(recommends.length != 0){
+        //         for (var id in recommends){
+        //             Business.query({ business_id: recommends[id]}, function(bs){
+        //                 // var new_bs = bs.filter(function(business){
+        //                 //     return business.stars > stars & business.city == city & business.categories.includes(categories);
+        //                 // });
+        //                 // res.push(new_bs);
+        //                 if (bs.length > 0)
+        //                     res.push(bs[0])
+        //             })                    
+        //         }
+
+        //     }
+
+        //     $scope.bs = res;
+        //     $scope.length = res.length;
+
+        // });
+
     }]);
 
 app.controller('HomeCtrl', ['$scope', '$resource', '$location', 

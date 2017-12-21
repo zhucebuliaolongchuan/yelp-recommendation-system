@@ -12,9 +12,8 @@ router.get('/', function(req, res) {
 	var collection = db.get('new_business');
 	collection.find({review_count : {$gt : 50}}, function(err, business){
 		if (err) throw err;
-
 		res.json(business);
-	});
+	})
 });
 
 router.get('/business_id=:business_id', function(req, res) {
