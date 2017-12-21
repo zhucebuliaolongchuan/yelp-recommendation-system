@@ -17,11 +17,19 @@ router.get('/', function(req, res) {
 	});
 });
 
-router.get('/:city', function(req, res) {
+router.get('/business_id=:business_id', function(req, res) {
 	var collection = db.get('new_business');
-	collection.find({city : req.params.city, review_count : {$gt : 50}}, function(err, business){
+	collection.find({business_id : req.params.business_id}, function(err, business){
 		if (err) throw err;
 		res.json(business);
+	})
+});
+
+router.get('/user_id=:user_id', function(req, res){
+	var collection = db.get('user_recommendation');
+	collection.find({user_id : req.params.user_id}, function(err, rs){
+		if (err) throw err;
+		res.json(rs);
 	})
 });
 

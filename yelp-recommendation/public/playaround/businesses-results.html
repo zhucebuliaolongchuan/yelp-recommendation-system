@@ -14,7 +14,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat='business in businesses'>
+		<tr ng-repeat='business in bs'>
 			<td>{{$index + 1}}</td>
 			<td>{{business.name}}</td>
 			<td>{{business.state}}</td>
@@ -24,33 +24,62 @@
 			<td>{{business.stars}}</td>
 			<td>{{business.new_stars}}</td>
 			<td><div ng-repeat = 'c in business.categories'><p>{{c}}</p></div></td>
-			<!-- <td>{{business.stars}}</td> -->
 		</tr>
 	</tbody>
 </table>
 
 <!-- <div class="row">
-	<div class="col-lg-2"></div>
-	<div class="col-lg-8" align = "center">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-10" align = "center">
 		<div class="row">
-			<div ng-repeat="business in businesses">
-				<div class="clearfix" ng-if="$index % 3 == 0"></div>
-				<div class="col-lg-4">
-					<div class="card" style="width: 20rem;">
-						<img class="card-img-top" src="http://is4.mzstatic.com/image/thumb/Purple128/v4/7c/a2/71/7ca271d3-4cd5-fe75-fba1-fd7261991b46/source/175x175bb.jpg" alt="Card image cap">
-						<div class="card-block">
-							<h4 class="card-title">{{business.name}}</h4>
-							<p class="card-text">{{business.address}}</p>
+			<div ng-repeat="business in bs">
+				<div class="clearfix" ng-if="$index % 3 == 0">
+					<div class="col-lg-4">
+						<div class="card" style="width: 20rem;">
+							<img class="card-img-top" src="http://is4.mzstatic.com/image/thumb/Purple128/v4/7c/a2/71/7ca271d3-4cd5-fe75-fba1-fd7261991b46/source/175x175bb.jpg" alt="Card image cap">
+							<div class="card-block">
+								<h4 class="card-title">{{business.name}}</h4>
+								<p class="card-text">{{business.address}}</p>
+							</div>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">Cras justo odio</li>
+								<li class="list-group-item">Dapibus ac facilisis in</li>
+								<li class="list-group-item">Vestibulum at eros</li>
+							</ul>
 						</div>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item">Cras justo odio</li>
-							<li class="list-group-item">Dapibus ac facilisis in</li>
-							<li class="list-group-item">Vestibulum at eros</li>
-						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="col-lg-2"></div>
+	<div class="col-lg-1"></div>
+</div> -->
+
+<!-- <div class="container">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Card title</h4>
+			<h6 class="card-subtitle text-muted">Card subtitle</h6>
+			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			<a href="#" class="card-link">Card link</a>
+			<a href="#" class="card-link">Another link</a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card card-block">
+      <h3 class="card-title">Special title treatment</h3>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card card-block">
+      <h3 class="card-title">Special title treatment</h3>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
 </div> -->

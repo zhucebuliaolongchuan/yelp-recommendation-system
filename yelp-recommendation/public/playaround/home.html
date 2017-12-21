@@ -7,15 +7,16 @@
 		<form>
 			<div class="form-group" align="left">
 				<div>
-					<input class="form-control" placeholder="Enter UserID" ng_model="name">
+					<angucomplete placeholder="Search UserID" pause="100" selectedobject="selectedUserID" localdata="selectedUserID" searchfields="user_id" titlefield="user_id" minlength="1" inputclass="form-control" matchclass="highlight"/>
+					<input class="form-control" placeholder="Enter UserID" ng_model="user_id">
 					<small><p class="form-text text-muted">Enter UserID so that we can recommend the business you would like</p></small>
 				</div>
 			</div>
 			<div class="form-group">
-				<angucomplete placeholder="Search City" pause="400" selectedobject="selectedCities" localdata="selectedCities" searchfields="city" titlefield="city" minlength="1" inputclass="form-control" matchclass="highlight"/>
+				<angucomplete placeholder="Search City" pause="100" selectedobject="selectedCities" localdata="selectedCities" searchfields="city" titlefield="city" minlength="1" inputclass="form-control" matchclass="highlight"/>
 			</div>
 			<div class="form-group">
-				<angucomplete placeholder="Search Category" pause="400" selectedobject="selectedCategories" localdata="selectedCategories" searchfields="name" titlefield="name" minlength="1" inputclass="form-control" matchclass="highlight"/>
+				<angucomplete placeholder="Search Category" pause="100" selectedobject="selectedCategories" localdata="selectedCategories" searchfields="name" titlefield="name" minlength="1" inputclass="form-control" matchclass="highlight"/>
 			</div>
 			<div class="form-group">
 				<div>
@@ -31,7 +32,7 @@
 				</div>
 			</div>
 
-			<button class="btn btn-danger btn-lg btn-block" ng-click = "search(selectedCities.originalObject.city, selectedCategories.originalObject.name, stars)">Recommend</button>
+			<button class="btn btn-danger btn-lg btn-block" ng-click = "search(selectedUserID.originalObject.user_id, selectedCities.originalObject.city, selectedCategories.originalObject.name, stars)">Recommend</button>
 		</form>
 		<br>
 	</div>
