@@ -52,7 +52,7 @@ app.controller('BusinessSearchCtrl', ['$scope', '$resource', '$location', '$rout
                 for (var id in recommends) {
                     Businesses.query({business_id : recommends[id]}, function(bs){
                         var new_bs = bs.filter(function(business){
-                            return business.stars > stars & business.city == city & business.categories.includes(categories);
+                            return business.new_stars > stars & business.city == city & business.categories.includes(categories);
                         });
                         if (new_bs.length != 0)
                             res.push(new_bs[0]);

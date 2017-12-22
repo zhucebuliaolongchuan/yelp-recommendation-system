@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var videos = require('./routes/videos');
 var reviews = require('./routes/reviews');
 var businesses = require('./routes/businesses');
 
@@ -27,7 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/api/videos', videos);
 app.use('/api/reviews', reviews);
 app.use('/api/businesses', businesses);
 
